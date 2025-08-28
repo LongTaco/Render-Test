@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Frontend + Backend Test</title>
+</head>
+
+<body>
+    <h1>Frontend inside the same repo</h1>
+    <button id="fetchBtn">Fetch from Backend</button>
+    <p id="output"></p>
+
+    <script>
+        document.getElementById("fetchBtn").addEventListener("click", async () => {
+            const res = await fetch("https://render-test-blpp.onrender.com/api/hello");
+            const data = await res.json();
+            document.getElementById("output").textContent = data.message;
+        });
+    </script>
+</body>
+
+</html>
